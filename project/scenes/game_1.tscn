@@ -75,24 +75,31 @@ centered = false
 
 [node name="coups1" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 8 )
+volume_db = -20.0
 
 [node name="coups2" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 20 )
+volume_db = -20.0
 
 [node name="coups3" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 11 )
+volume_db = -20.0
 
 [node name="coups4" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 23 )
+volume_db = -20.0
 
 [node name="coups5" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 14 )
+volume_db = -20.0
 
 [node name="coups6" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 12 )
+volume_db = -20.0
 
 [node name="coups7" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
 stream = ExtResource( 19 )
+volume_db = -20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barbare"]
 position = Vector2( 50.5284, 53.4348 )
@@ -102,33 +109,33 @@ shape = SubResource( 2 )
 
 [node name="cris1" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 16 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="cris2" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 10 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="cris3" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 15 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="cris4" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 9 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="cris5" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 7 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="cris6" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
 stream = ExtResource( 22 )
-volume_db = -10.0
+volume_db = -30.0
 
 [node name="Blork" type="Node2D" parent="."]
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
+volume_db = -35.0
 
 [node name="Cadre" type="Control" parent="."]
 anchor_right = 1.0

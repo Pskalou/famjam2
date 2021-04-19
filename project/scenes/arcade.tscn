@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/arcade_KidPaddle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/arcade_BorneJeu1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sounds/arcade/arcade_music.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/img/arcade/background.jpg" type="Texture" id=4]
+[ext_resource path="res://scenes/joystick.tscn" type="PackedScene" id=5]
 
 [node name="arcade" type="Node2D"]
 modulate = Color( 0.815686, 0.596078, 0.596078, 1 )
@@ -20,5 +21,8 @@ position = Vector2( 127.173, 309.02 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -15.0
+volume_db = -35.0
 autoplay = true
+
+[node name="Joystick" parent="." instance=ExtResource( 5 )]
+position = Vector2( 121.806, 488.887 )

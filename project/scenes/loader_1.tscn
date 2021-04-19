@@ -131,12 +131,12 @@ __meta__ = {
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -20.0
+volume_db = -35.0
 autoplay = true
 
 [node name="Rire" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -20.0
+volume_db = -35.0
 [connection signal="animation_finished" from="Barre" to="." method="_on_Barre_animation_finished"]
 [connection signal="gui_input" from="Consigne/Touch" to="." method="_on_Touch_gui_input"]
 [connection signal="gui_input" from="Control/Game_over_again/Control_gameOver" to="." method="_on_Control_gameOver_gui_input"]

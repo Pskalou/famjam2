@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 
 onready var audio_pas:AudioStreamPlayer2D = $Audio_pas_01
-
+onready var joystick= get_parent().get_node("Joystick/Joystick_button")
 
 # vitesse de déplacement
 const SPEED = 200
@@ -20,31 +20,55 @@ func _ready():
 
 
 
-func _physics_process(_delta):
+func droite():
+	audio_pas.stream_paused = false
+	$AnimatedSprite.flip_h = false
+	$AnimatedSprite.play("walk")
+	motion.x = SPEED
+
+func gauche():
+	audio_pas.stream_paused = false
+	$AnimatedSprite.flip_h = true
+	$AnimatedSprite.play("walk")
+	motion.x = -SPEED
+func haut():
+	audio_pas.stream_paused = false
+	$AnimatedSprite.play("walk")
+	motion.y = -SPEED
+
+func bas():
+	audio_pas.stream_paused = false
+	$AnimatedSprite.play("walk")
+	motion.y = SPEED	
+func arret():
+	audio_pas.stream_paused = true
+	motion.x = 0
+	motion.y = 0
+	$AnimatedSprite.play("idle")
+	
+func _physics_process(_delta):	
+	var joystick_seuil = 0.7
+	var joystick_value = joystick.get_value()
+
 	if Input.is_action_pressed("ui_right"):
-		audio_pas.stream_paused = false
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("walk")
-		motion.x = SPEED
+		droite()
 	elif Input.is_action_pressed("ui_left"):
-		audio_pas.stream_paused = false
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("walk")
-		motion.x = -SPEED
+		gauche()
 	elif Input.is_action_pressed("ui_up"):
-		audio_pas.stream_paused = false
-		$AnimatedSprite.play("walk")
-		motion.y = -SPEED
+		haut()
 	elif Input.is_action_pressed("ui_down"):
-		audio_pas.stream_paused = false
-		$AnimatedSprite.play("walk")
-		motion.y = SPEED	
+		bas()
+	elif joystick_value.length() > 0:
+		if joystick_value.x > joystick_seuil:
+			droite()
+		if joystick_value.x < -joystick_seuil:
+			gauche()
+		if joystick_value.y < -joystick_seuil:
+			haut()
+		if joystick_value.y > joystick_seuil:
+			bas()
 	else:
-		audio_pas.stream_paused = true
-		motion.x = 0
-		motion.y = 0
-		$AnimatedSprite.play("idle")
-		pass
-		
-	var _vscode_ = move_and_slide(motion, FLOOR_NORMAL)	
+		arret()
+	
+	var _ignore = move_and_slide(motion, FLOOR_NORMAL)
 		
