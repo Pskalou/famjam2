@@ -129,7 +129,16 @@ func _input(event):
 		# * `N` pour reécrire le texte
 		if state == State.WAITING:
 			if letter == KEY_O:
-				var _vscode_ = get_tree().reload_current_scene()
+				var _ignore = get_tree().reload_current_scene()
 			if letter == KEY_N:
 				_show_end_text()
 
+
+
+func _on_Touch_gui_input(event):
+	if event is InputEventMouseButton:
+		_leave_barre()
+
+func _on_Control_gameOver_gui_input(event):
+	if event is InputEventMouseButton:
+		var _ignore = get_tree().reload_current_scene()

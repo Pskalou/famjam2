@@ -83,6 +83,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Touch" type="Control" parent="Consigne"]
+margin_right = 481.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -115,6 +122,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control_gameOver" type="Control" parent="Control/Game_over_again"]
+margin_right = 538.0
+margin_bottom = 131.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
@@ -124,3 +138,5 @@ autoplay = true
 stream = ExtResource( 7 )
 volume_db = -20.0
 [connection signal="animation_finished" from="Barre" to="." method="_on_Barre_animation_finished"]
+[connection signal="gui_input" from="Consigne/Touch" to="." method="_on_Touch_gui_input"]
+[connection signal="gui_input" from="Control/Game_over_again/Control_gameOver" to="." method="_on_Control_gameOver_gui_input"]
