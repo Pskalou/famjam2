@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/game_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian1.png" type="Texture" id=2]
@@ -50,6 +50,9 @@ font_data = ExtResource( 4 )
 size = 40
 outline_size = 2
 font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 170, 110 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -144,31 +147,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="Cadre"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -325.0
-margin_bottom = 36.0
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Score : 20000"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Instruction" type="Label" parent="Cadre"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -36.0
-theme = ExtResource( 3 )
-text = "Appuyer sur la bonne touche..."
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Lettre" type="Label" parent="Cadre"]
 margin_left = 324.653
 margin_top = 61.8388
@@ -184,6 +162,9 @@ visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Again" type="Label" parent="Cadre"]
 visible = false
@@ -197,5 +178,37 @@ text = "Encore
 une petite
 partie ?
 (O/N)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Cadre/Again"]
+shape = SubResource( 5 )
+
+[node name="Instruction" type="Label" parent="Cadre"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -36.0
+theme = ExtResource( 3 )
+text = "Appuyer sur la bonne touche..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Cadre"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -325.0
+margin_bottom = 36.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score : 20000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Barbare" to="." method="_on_Barbare_body_entered"]
 [connection signal="animation_finished" from="Barbare/Animation" to="." method="_on_Perso_animation_finished"]
+[connection signal="pressed" from="Cadre/Again/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

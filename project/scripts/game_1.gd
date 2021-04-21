@@ -206,3 +206,7 @@ func _process(_delta):
 			current_blork.move_and_slide(current_blork_speed, Vector2(0, -1))
 		else:
 			new_enemy()
+
+
+func _on_TouchScreenButton_pressed():
+	_leave_game()
