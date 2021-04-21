@@ -21,7 +21,7 @@ position = Vector2( 127.173, 309.02 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -35.0
+volume_db = -30.0
 autoplay = true
 
 [node name="Joystick" parent="." instance=ExtResource( 5 )]
