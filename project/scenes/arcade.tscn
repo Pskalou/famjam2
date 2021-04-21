@@ -25,4 +25,5 @@ volume_db = -35.0
 autoplay = true
 
 [node name="Joystick" parent="." instance=ExtResource( 5 )]
-position = Vector2( 121.806, 488.887 )
+position = Vector2( 97.8331, 502.372 )
+scale = Vector2( 1.5, 1.5 )
