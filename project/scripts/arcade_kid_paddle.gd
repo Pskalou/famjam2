@@ -19,8 +19,6 @@ func _ready():
 	audio_pas.stream_paused = true
 
 
-
-	
 func _physics_process(_delta):	
 	var joystick_seuil = 0.5
 	var joystick_value = joystick.get_value()
